@@ -21,7 +21,7 @@ const Homepage: React.FC = () => {
   useEffect(() => {
     const fetchActivities = async () => {
       try {
-        const res = await axios.get("https://bookit-1pfq.vercel.app/api/activities");
+        const res = await axios.get("https:/bookit-1pfq.vercel.app/api/activities");
         setActivities(res.data);
         setFilteredActivities(res.data);
       } catch (error) {

@@ -40,7 +40,7 @@ const DetailsPage: React.FC = () => {
   useEffect(() => {
     const fetchActivity = async () => {
       try {
-        const res = await axios.get<Activity>(`https://bookit-1pfq.vercel.app/api/activities/${id}`);
+        const res = await axios.get<Activity>(`https:/bookit-1pfq.vercel.app/api/activities/${id}`);
         setActivity(res.data);
       } catch (error) {
         console.error("Failed to fetch activity:", error);
