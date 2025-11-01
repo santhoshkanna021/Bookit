@@ -36,11 +36,13 @@ const DetailsPage: React.FC = () => {
     { time: "01:00 pm", left: 0 },
   ];
 
-  // ✅ Fetch activity data from backend
+  // ✅ Fetch activity data from deployed backend
   useEffect(() => {
     const fetchActivity = async () => {
       try {
-        const res = await axios.get<Activity>(`http://localhost:5000/api/activities/${id}`);
+        const res = await axios.get<Activity>(
+          `https://bookit-1pfq.vercel.app/api/activities/${id}`
+        );
         setActivity(res.data);
       } catch (error) {
         console.error("Failed to fetch activity:", error);

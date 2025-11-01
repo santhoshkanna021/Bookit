@@ -17,11 +17,11 @@ const Homepage: React.FC = () => {
   const [filteredActivities, setFilteredActivities] = useState<Activity[]>([]);
   const navigate = useNavigate();
 
-  // ✅ Fetch activities from backend
+  // ✅ Fetch activities from deployed backend
   useEffect(() => {
     const fetchActivities = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/activities");
+        const res = await axios.get("https://bookit-1pfq.vercel.app/api/activities");
         setActivities(res.data);
         setFilteredActivities(res.data);
       } catch (error) {
