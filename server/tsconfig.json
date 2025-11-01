@@ -1,46 +1,32 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    /* ===== File Layout ===== */
+    "rootDir": "./",                // Source files root
+    "outDir": "./dist",             // Output directory for compiled JS
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "CommonJS",
-    "target": "ES2020",
-    "types": ["node"],
-    "outDir": "./dist",
+    /* ===== Environment Settings ===== */
+    "module": "CommonJS",           // Node.js compatible module system
+    "target": "ES2020",             // Modern JavaScript output
     "moduleResolution": "node",
+    "types": ["node"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
 
-    // Other Outputs
+    /* ===== Outputs ===== */
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "declaration": false,           // Optional: skip .d.ts generation
+    "declarationMap": false,
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
+    /* ===== Type Checking ===== */
     "strict": true,
     "skipLibCheck": true,
-  }
+    "noUncheckedIndexedAccess": false,
+    "exactOptionalPropertyTypes": false
+  },
+  "include": ["server.ts", "seed.ts", "**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
